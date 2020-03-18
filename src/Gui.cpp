@@ -2,7 +2,7 @@
 
 #include "ofAppRunner.h"
 
-
+#include "CustomFont.cpp"
 
 namespace ofxImGui
 {
@@ -25,6 +25,13 @@ namespace ofxImGui
 	{
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO();
+
+        ImGui::GetIO().Fonts->AddFontFromFileTTF("./data/Roboto-Regular.ttf", 15.0f);
+
+        // load icon font file (CustomFont.cpp)
+        static const ImWchar icons_ranges[] = { ICON_MIN_IMFDLG, ICON_MAX_IMFDLG, 0 };
+        ImFontConfig icons_config; icons_config.MergeMode = true; icons_config.PixelSnapH = true;
+        ImGui::GetIO().Fonts->AddFontFromMemoryCompressedBase85TTF(FONT_ICON_BUFFER_NAME_IMFDLG, 15.0f, &icons_config, icons_ranges);
 
 		io.DisplaySize = ImVec2((float)ofGetWidth(), (float)ofGetHeight());
 		io.MouseDrawCursor = false;

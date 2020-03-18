@@ -10,7 +10,11 @@ int main()
   settings.setGLESVersion(2);
   ofCreateWindow(settings);
 #else
-  ofSetupOpenGL(1280, 720, OF_WINDOW);
+    ofGLFWWindowSettings settings;
+    settings.setSize(1280, 720);
+    settings.setGLVersion(3,2);
+    ofCreateWindow(settings);
+//  ofSetupOpenGL(1280, 720, OF_WINDOW);
 #endif
 
 ofRunApp( new ofApp());

@@ -4,6 +4,8 @@ example*/bin/libs/
 example*/bin/*
 !example*/bin/data/.gitkeep
 !example*/bin/data/*.png
+example-demo/example-demo.qbs.user
+example-helpers/example-helpers.qbs.user
 
 
 #########################
